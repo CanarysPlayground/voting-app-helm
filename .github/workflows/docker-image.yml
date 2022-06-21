@@ -31,3 +31,4 @@ jobs:
           tags: |
             ghcr.io/canarysplayground/voting-app:latest
             ghcr.io/canarysplayground/voting-app:${{ steps.date.outputs.date }}.${{ github.run_number }}
+            
