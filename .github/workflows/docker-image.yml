@@ -22,7 +22,6 @@ jobs:
         password: ${{ secrets.DOCKER_PAT }}
     
     - name: Build and Push Image
-      id: gcr_push
       uses: docker/build-push-action@v2
       with:
           context: .
@@ -31,4 +30,3 @@ jobs:
           tags: |
             ghcr.io/canarysplayground/voting-app:latest
             ghcr.io/canarysplayground/voting-app:${{ steps.date.outputs.date }}.${{ github.run_number }}
-            
