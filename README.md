@@ -8,6 +8,10 @@ products:
 description: "This sample creates a multi-container application in an Azure Kubernetes Service (AKS) cluster."
 ---
 
+# Build status
+
+[![CI](https://github.com/CanarysPlayground/voting-app-helm/actions/workflows/docker-image.yml/badge.svg)](https://github.com/CanarysPlayground/voting-app-helm/actions/workflows/docker-image.yml)
+
 # Azure Voting App
 
 This sample creates a multi-container application in an Azure Kubernetes Service (AKS) cluster. The application interface has been built using Python / Flask. The data component is using Redis.
