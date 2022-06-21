@@ -7,12 +7,27 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
+    name: Build App
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file azure-vote/Dockerfile --tag my-image-name:$(date +%s)
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.DOCKER_PAT }}
+    
+    - name: Build and Push Image
+      id: gcr_push
+      uses: docker/build-push-action@v2
+      with:
+          context: .
+          file: azure-vote/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/canarysplayground/voting-app:latest
+            ghcr.io/canarysplayground/voting-app:${{ steps.date.outputs.date }}.${{ github.run_number }}
