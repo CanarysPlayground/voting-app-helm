@@ -1,13 +1,3 @@
----
-page_type: sample
-languages:
-  - python
-products:
-  - azure
-  - azure-redis-cache
-description: "This sample creates a multi-container application in an Azure Kubernetes Service (AKS) cluster."
----
-
 # Build status
 
 [![CI](https://github.com/CanarysPlayground/voting-app-helm/actions/workflows/docker-image.yml/badge.svg)](https://github.com/CanarysPlayground/voting-app-helm/actions/workflows/docker-image.yml)
